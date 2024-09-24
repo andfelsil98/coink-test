@@ -1,0 +1,87 @@
+<app-header title="DATOS DE CUENTA" redirectPath="/confirm-number" imagePath="assets/stepper_2.svg"></app-header>
+<ion-content [fullscreen]="true">
+  <div class="register-form">
+    <app-instruction-set path="assets/oink.svg" text='<p class="secondary-color" style="font-size:16px;font-weight:bold; margin:0;">¿CUÁLES SON TUS DATOS?</p><p class="gray-text-color" style="font-size:16px">Ahora necesitamos saber algunos datos tuyos</p>'>></app-instruction-set>
+
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form__body">
+      <ion-text class="register-form__body--title secondary-color">Documento de identidad</ion-text>
+      <ion-item lines="none">
+        <ion-select formControlName="documentType" label="Tipo de documento" interface="popover" label-placement="floating" fill="solid">
+          <ion-select-option *ngFor="let documentType of documentTypesList" [value]="documentType.id">
+            {{ documentType.name }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registerForm?.get('documentType')?.touched && registerForm?.get('documentType')?.invalid">
+        Campo obligatorio.
+      </ion-note>
+
+      <ion-item lines="none">
+        <ion-input label="Numero de documento" label-placement="floating" fill="solid" formControlName="documentNumber"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registerForm?.get('documentNumber')?.touched && registerForm?.get('documentNumber')?.invalid">
+        Campo obligatorio.
+      </ion-note>
+
+
+      <ion-item lines="none">
+        <ion-input appDateInput label="Fecha de expedicion del documento" label-placement="floating" fill="solid" formControlName="documentExpedition" placeholder="DD/MM/AAAA"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registerForm?.get('documentExpedition')?.touched && registerForm?.get('documentExpedition')?.invalid">
+        Campo obligatorio.
+      </ion-note>
+
+      <ion-item lines="none">
+        <ion-input appDateInput label="Fecha de nacimiento" label-placement="floating" fill="solid" formControlName="dateBirth" placeholder="DD/MM/AAAA"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registerForm?.get('dateBirth')?.touched && registerForm?.get('dateBirth')?.invalid">
+        Campo obligatorio.
+      </ion-note>
+
+      <ion-item lines="none" class="last-doc-info">
+        <ion-select formControlName="genre" label="Genero" interface="popover" label-placement="floating" fill="solid">
+          <ion-select-option *ngFor="let genre of genreList" [value]="genre.id">
+            {{ genre.name }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registerForm?.get('genre')?.touched && registerForm?.get('genre')?.invalid">
+        Campo obligatorio.
+      </ion-note>
+
+      <ion-text class="register-form__body--title secondary-color">Configura tu cuenta</ion-text>
+      <ion-item lines="none">
+        <ion-input label="Correo electronico" label-placement="floating" fill="solid" formControlName="email" placeholder="ejemplo@hotmail.com"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registerForm?.get('email')?.touched && registerForm?.get('email')?.invalid">
+        Campo obligatorio.
+      </ion-note>
+
+      <ion-item lines="none">
+        <ion-input label="Confirmar correo electronico" label-placement="floating" fill="solid" formControlName="emailConfirm" placeholder="ejemplo@hotmail.com"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registerForm?.get('emailConfirm')?.touched && registerForm?.get('emailConfirm')?.invalid">
+        Campo obligatorio.
+      </ion-note>
+
+      <ion-item lines="none">
+        <ion-input label="Pin de seguridad" label-placement="floating" fill="solid" formControlName="pin" placeholder="ejemplo@hotmail.com"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registerForm?.get('pin')?.touched && registerForm?.get('pin')?.invalid">
+        Campo obligatorio.
+      </ion-note>
+
+      <ion-item lines="none">
+        <ion-input label="Confirmar pin de seguridad" label-placement="floating" fill="solid" formControlName="pinConfirm" placeholder="ejemplo@hotmail.com"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registerForm?.get('pinConfirm')?.touched && registerForm?.get('pinConfirm')?.invalid">
+        Campo obligatorio.
+      </ion-note>
+      <ion-buttons class="register-form__submit">
+        <ion-button class="secondary-color register-form__submit--button" expand="block" type="submit" [disabled]="registerForm.invalid">Siguiente</ion-button>
+      </ion-buttons>
+    </form>
+  </div>
+
+</ion-content>

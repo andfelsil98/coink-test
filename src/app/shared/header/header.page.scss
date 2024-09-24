@@ -1,0 +1,34 @@
+@import '../../../style.environments.scss';
+.confirm-number-header{
+  height: 84px;
+  display: flex;
+  align-items: flex-end;
+
+  &__buttons{
+    &--back{
+      padding: 0 0 27px 20px;
+    }
+  }
+
+  &__content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    padding: 10px 25px 0 0;
+    &--title{
+      font-size: 16px;
+      text-align: center;
+      font-weight: bold;
+      padding: 0;
+    }
+
+    &--stepper{
+      width: 188px;
+      padding-bottom:7px;
+    }
+  }
+
+}

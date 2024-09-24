@@ -1,0 +1,11 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="confirm-number-header">
+    <ion-buttons slot="start" class="confirm-number-header__buttons">
+      <ion-back-button mode="ios" text="" [defaultHref]="redirectPath" class="primary-color-dark confirm-number-header__buttons--back"></ion-back-button>
+    </ion-buttons>
+    <div class="confirm-number-header__content">
+      <ion-title class="confirm-number-header__content--title secondary-color">{{ title ? title : ''}}</ion-title>
+      <ion-img [src]="imagePath" alt="register-stepper" class="confirm-number-header__content--stepper"></ion-img>
+    </div>
+  </ion-toolbar>
+</ion-header>

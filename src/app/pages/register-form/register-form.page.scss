@@ -1,0 +1,55 @@
+@import '../../../style.environments.scss';
+@import '../../../mixins.scss';
+.register-form{
+  margin-top: 40px;
+  padding: 0 24px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &__body{
+    max-width: 450px;
+    width: 100%;
+    margin-top: 24px;
+    & ion-item {
+      padding: 0;
+      margin: 0;
+      margin-top: 16px;
+      width: 100%;
+    }
+
+    & .last-doc-info{
+      margin-bottom: 32px;
+    }
+
+    & ion-select{
+      width: 100%;
+      padding: 0;
+      --background: transparent;
+    }
+
+    & ion-input{
+      --background: transparent;
+    }
+
+    & ion-note{
+      padding-left: 25px;
+    }
+
+    &--title{
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+  }
+
+  &__submit{
+    padding: 20px 0 20px 0;
+    &--button{
+      @include button-style($primary-color-dark);
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+}
+

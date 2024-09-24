@@ -1,2 +1,32 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+@import '../style.environments.scss';
+:root {
+  --ion-font-family:'montserrat', sans-serif;
+  --ion-color-primary: $primary-color-dark;
+  --ion-color-secondary: $secondary-color;
+}
+
+.primary-color-dark{
+  color: $primary-color-dark;
+}
+
+.secondary-color{
+  color: $secondary-color;
+}
+
+.white{
+  color: #FFF;
+}
+
+.gray-text-color{
+  color: $gray-text-color;
+}
+
+.light-gray-text-color{
+  color: $light-gray-text-color
+}
+
+.bg-light-green{
+  background-color: #1EEA00 !important;
+}

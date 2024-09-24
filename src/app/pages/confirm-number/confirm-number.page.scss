@@ -1,0 +1,93 @@
+@import '../../../style.environments.scss';
+.confirm-number-body{
+  margin-top: 47px;
+  padding: 0 24px 0 24px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  &__phone{
+    color: $light-gray-text-color;
+    width: 100%;
+    box-shadow: 0pt 5px 5px #3535351A;
+    border-radius: 5px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    max-width: 520px;
+    margin-bottom: 21px;
+    &--text{
+      font-size: 24px;
+      color: #AAAAAA;
+    }
+  }
+
+  &__keypad{
+    width: 100%;
+    max-width: 520px;
+    margin: 0;
+    padding: 0;
+    &--key{
+      color: $secondary-color;
+      padding: 21px;
+      text-align: center;
+      font-size: 32px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: transform 0.1s ease;
+      &:active{
+        transform: scale(0.95);
+      }
+    }
+
+    &--backspace{
+      width: 56px;
+    }
+
+    &--check{
+      width: 20px;
+    }
+
+    & .rounded{
+      width: 100%;
+      border-radius: 50%;
+      background-color: #D3D3D3;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ion-row:last-of-type ion-col:last-of-type {
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ion-row:last-of-type ion-col:first-of-type {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ion-row ion-col:first-child {
+      padding-left: 0px;
+    }
+
+    ion-row ion-col:last-child {
+      padding-right: 0px;
+    }
+
+    & ion-row{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+
+}
+

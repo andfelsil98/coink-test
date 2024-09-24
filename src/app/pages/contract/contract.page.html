@@ -1,0 +1,41 @@
+<app-header title="FINALIZAR" redirectPath="/register-form" imagePath="assets/stepper_3.svg"></app-header>
+
+
+<ion-content [fullscreen]="true">
+  <div class="contract-body">
+    <app-instruction-set path="assets/policeOink.svg" text='<p class="secondary-color" style="font-size:16px;font-weight:bold; margin:0;">ESTAS MUY CERCA DE SER PARTE DE COINK.</p><p class="gray-text-color" style="font-size:16px">Solo es necesario que leas detenidamente el contrato que se encuentra al final de esta pantalla y lo aceptes.</p>'>></app-instruction-set>
+    <ion-text class="contract-body__title secondary-color">
+      LO MÁS IMPORTANTE
+    </ion-text>
+    <br>
+    <ion-text class="contract-body__text">
+      Para la apertura del Depósito de Bajo Monto en COINK debes ser una persona natural que de acuerdo con nuestra legislación vigente te encuentres en plena capacidad para adquirir derechos y contraer obligaciones.
+    </ion-text>
+    <br>
+    <ion-text class="contract-body__text">
+      Abrirás una cuenta COINK de Bajo Monto la cual te permitirá tener un saldo hasta por 8 salarios mínimos en el mes y realizar débitos por el mismo valor. Si deseas sobrepasar estos límites debes solicitarnos la apertura de un Depósito Ordinario COINK Persona Natural.
+    </ion-text>
+    <br>
+    <ion-text class="contract-body__text">
+      Solo puedes tener una cuenta COINK de Bajo Monto y podrás utilizar tu dispositivo móvil para consultar tu saldo, tus movimientos, realizar tus transacciones y administrar tu cuenta.
+    </ion-text>
+    <br>
+    <ion-text class="contract-body__text">
+      Recuerda que no necesitas saldo mínimo ni monto inicial para su apertura.
+    </ion-text>
+
+    <ion-text class="contract-body__title secondary-color">
+      <u>Lee tu contrato</u>
+    </ion-text>
+
+    <ion-checkbox slot="start">He leído ya acepto el contrato</ion-checkbox>
+
+    <ion-buttons class="contract-body__submit">
+      <ion-button expand="block" class="contract-body__submit--button secondary-color" [routerLink]="['/welcome']">
+        Aceptar
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+
+</ion-content>

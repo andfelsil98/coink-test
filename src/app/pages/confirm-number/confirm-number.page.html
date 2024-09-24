@@ -1,0 +1,42 @@
+<app-header title="NÚMERO CELULAR" redirectPath="/auth-screen" imagePath="assets/stepper_1.svg"></app-header>
+<ion-content [fullscreen]="true">
+  <div class="confirm-number-body">
+    <app-instruction-set path="assets/oink.svg" text="Para comenzar, por favor ingresa <b>tu número celular</b>."></app-instruction-set>
+
+    <div class="confirm-number-body__phone">
+      <ion-text class="confirm-number-body__phone--text">{{ formattedNumber }}</ion-text>
+    </div>
+
+    <ion-grid class="confirm-number-body__keypad">
+      <ion-row>
+        <ion-col class="confirm-number-body__keypad--key" (click)="addNumber(1)">1</ion-col>
+        <ion-col class="confirm-number-body__keypad--key" (click)="addNumber(2)">2</ion-col>
+        <ion-col class="confirm-number-body__keypad--key" (click)="addNumber(3)">3</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="confirm-number-body__keypad--key" (click)="addNumber(4)">4</ion-col>
+        <ion-col class="confirm-number-body__keypad--key" (click)="addNumber(5)">5</ion-col>
+        <ion-col class="confirm-number-body__keypad--key" (click)="addNumber(6)">6</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="confirm-number-body__keypad--key" (click)="addNumber(7)">7</ion-col>
+        <ion-col class="confirm-number-body__keypad--key" (click)="addNumber(8)">8</ion-col>
+        <ion-col class="confirm-number-body__keypad--key" (click)="addNumber(9)">9</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="confirm-number-body__keypad--key" (click)="removeNumber()">
+          <ion-img src="../../../assets/backspace.svg" alt="back-space" class="confirm-number-body__keypad--backspace"></ion-img>
+        </ion-col>
+        <ion-col class="confirm-number-body__keypad--key" (click)="addNumber(0)">0</ion-col>
+        <ion-col class="confirm-number-body__keypad--key">
+          <div class="rounded" [ngClass]="{'bg-light-green': phoneNumber.length === 10}" (click)="nextStep()">
+            <ion-img src="../../../assets/check.svg" alt="check" class="confirm-number-body__keypad--check"></ion-img>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
