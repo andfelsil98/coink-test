@@ -1,3 +1,17 @@
+## Pasos para clonar el repositorio y generar apk
+# Clonar el repositorio
+git clone https://github.com/andfelsil98/coink-test.git
+cd coink-test
+npm install
+
+# Generar apk usando Capacitor
+npx cap add android
+npx cap add ios
+npx cap sync
+npm run build
+npx cap open android
+npx cap open ios
+
 ## Cosas que faltaron.
 
 - Consumir servicio que listaba los generos.
